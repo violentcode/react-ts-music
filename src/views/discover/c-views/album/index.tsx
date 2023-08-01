@@ -4,8 +4,8 @@ import { memo } from 'react'
 interface IProps {
   children?: ReactNode
 }
-const Friend: FC<IProps> = () => {
-  return <div>Friend</div>
+const Album: FC<IProps> = () => {
+  return <div>Album</div>
 }
 
-export default memo(Friend)
+export default memo(Album)
