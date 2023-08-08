@@ -1,4 +1,5 @@
 import type { RouteObject } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { lazy } from 'react'
 
 const Discover = lazy(() => import('@/views/discover'))
@@ -12,7 +13,7 @@ const Artist = lazy(() => import('@/views/discover/c-views/artist'))
 const Album = lazy(() => import('@/views/discover/c-views/album'))
 
 const routes: RouteObject[] = [
-  { path: '/', element: <Discover /> },
+  { path: '/', element: <Navigate to="/discover" /> },
   {
     path: '/discover',
     element: <Discover />,

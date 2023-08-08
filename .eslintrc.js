@@ -30,6 +30,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react'],
   rules: {
     '@typescript-eslint/no-var-requires': 0,
-    'no-debugger': 0
+    'no-debugger': 0,
+    '@typescript-eslint/no-explicit-any': 0
   }
 }
