@@ -1,4 +1,8 @@
-import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+import type {
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+  AxiosRequestConfig
+} from 'axios'
 
 // 这对AxiosRequestConfig配置进行扩展,
 export interface IInterceptors<T = AxiosResponse> {
@@ -10,7 +14,6 @@ export interface IInterceptors<T = AxiosResponse> {
   responseFailure?: (err: any) => any
 }
 
-export interface MYRequestConfig<T = AxiosResponse>
-  extends InternalAxiosRequestConfig {
+export interface MYRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
   interceptors?: IInterceptors<T>
 }

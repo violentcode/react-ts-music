@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { AxiosInstance } from 'axios'
+import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
 import type { MYRequestConfig } from './type'
 
 class MYRequest {
@@ -48,7 +48,9 @@ class MYRequest {
   request<T = any>(config: MYRequestConfig<T>) {
     // 单次请求的成功拦截处理，拦截器本质上就是request中的一个个钩子函数
     if (config.interceptors?.requestSuccess) {
-      config = config.interceptors.requestSuccess(config)
+      config = config.interceptors.requestSuccess(
+        config as InternalAxiosRequestConfig
+      )
     }
 
     return new Promise<T>((resolve, reject) => {
