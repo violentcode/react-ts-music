@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 const discoverSlice = createSlice({
   name: 'discover',
   reducers: {
-    changeName(state, { payload }) {
+    changeName(state, { payload }: PayloadAction<string>) {
       state.name = payload
     }
   },
