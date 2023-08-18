@@ -1,21 +1,31 @@
 import type { FC, ReactNode } from 'react'
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HeaderWrapper, LeftHeader, RightHeader } from './style'
 import header_title from '@/assects/data/header_title'
+import classNames from 'classnames'
 
 interface IProps {
   children?: ReactNode
 }
 const AppHeader: FC<IProps> = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
   function createTab(item: any) {
+    console.log(activeIndex)
     let el: ReactNode
     switch (item.type) {
       case 'path':
+        el = <Link to={item.path}>{item.title}</Link>
         break
       case 'link':
+        el = (
+          <a href={item.link} target="_blank">
+            {item.title}
+          </a>
+        )
         break
     }
+    return el
   }
   return (
     <HeaderWrapper>
@@ -23,7 +33,20 @@ const AppHeader: FC<IProps> = () => {
         <LeftHeader>
           <a className="logo sprite_01">网易云音乐</a>
           <div className="list">
-            {header_title.map((item) => createTab(item))}
+            {header_title.map((item, index) => {
+              return (
+                <div
+                  key={item.title}
+                  className={classNames({
+                    item: true,
+                    active: index === activeIndex
+                  })}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {createTab(item)}
+                </div>
+              )
+            })}
           </div>
         </LeftHeader>
         <RightHeader>右侧搜索</RightHeader>

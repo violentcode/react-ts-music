@@ -15,6 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "axios": "^1.4.0",
+    "classnames": "^2.3.2",
     "craco-less": "^3.0.1",
     "eslint-plugin-react": "^7.33.1",
     "normalize.css": "^8.0.1",

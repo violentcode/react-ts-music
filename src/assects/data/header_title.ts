@@ -29,5 +29,10 @@ export default [
     title: '云推歌',
     link: 'https://music.163.com/st/ad-song/login',
     type: 'link'
+  },
+  {
+    title: '下载客户端',
+    path: '/download',
+    type: 'path'
   }
 ]

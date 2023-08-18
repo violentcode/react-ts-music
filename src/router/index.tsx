@@ -5,6 +5,7 @@ import { lazy } from 'react'
 const Discover = lazy(() => import('@/views/discover'))
 const My = lazy(() => import('@/views/my'))
 const Friend = lazy(() => import('@/views/friend'))
+const Download = lazy(() => import('@/views/download'))
 const Recommend = lazy(() => import('@/views/discover/c-views/recommend'))
 const Toplist = lazy(() => import('@/views/discover/c-views/toplist'))
 const Playlist = lazy(() => import('@/views/discover/c-views/playlist'))
@@ -33,6 +34,10 @@ const routes: RouteObject[] = [
   {
     path: '/friend',
     element: <Friend />
+  },
+  {
+    path: '/download',
+    element: <Download />
   }
 ]
 

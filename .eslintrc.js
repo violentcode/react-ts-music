@@ -31,6 +31,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-var-requires': 0,
     'no-debugger': 0,
-    '@typescript-eslint/no-explicit-any': 0
+    '@typescript-eslint/no-explicit-any': 0,
+    'react/jsx-no-target-blank': 0
   }
 }
