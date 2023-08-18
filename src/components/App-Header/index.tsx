@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { HeaderWrapper, LeftHeader, RightHeader } from './style'
 import header_title from '@/assects/data/header_title'
 import classNames from 'classnames'
+import { Input } from 'antd'
 
 interface IProps {
   children?: ReactNode
@@ -49,7 +50,9 @@ const AppHeader: FC<IProps> = () => {
             })}
           </div>
         </LeftHeader>
-        <RightHeader>右侧搜索</RightHeader>
+        <RightHeader>
+          <Input defaultValue="音乐/视频/电台/用户"></Input>
+        </RightHeader>
       </div>
     </HeaderWrapper>
   )

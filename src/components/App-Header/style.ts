@@ -16,7 +16,6 @@ export const LeftHeader = styled.div`
     height: 70px;
     text-indent: -9999px;
   }
-
   .list {
     display: flex;
     height: 70px;
