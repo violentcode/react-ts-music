@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { HeaderWrapper, LeftHeader, RightHeader } from './style'
 import header_title from '@/assects/data/header_title'
 import classNames from 'classnames'
-import { Input } from 'antd'
+import { Input, Button } from 'antd'
+import { SearchOutlined } from '@ant-design/icons'
 
 interface IProps {
   children?: ReactNode
@@ -51,7 +52,13 @@ const AppHeader: FC<IProps> = () => {
           </div>
         </LeftHeader>
         <RightHeader>
-          <Input defaultValue="音乐/视频/电台/用户"></Input>
+          <Input
+            size="small"
+            placeholder="音乐/视频/电台/用户"
+            prefix={<SearchOutlined />}
+          />
+          <Button>创作者中心</Button>
+          <div className="login">登陆</div>
         </RightHeader>
       </div>
     </HeaderWrapper>
