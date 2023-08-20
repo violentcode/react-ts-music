@@ -1,23 +1,20 @@
 import type { FC, ReactNode } from 'react'
-import { memo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { memo } from 'react'
+import { NavLink } from 'react-router-dom'
 import { HeaderWrapper, LeftHeader, RightHeader } from './style'
 import header_title from '@/assects/data/header_title'
-import classNames from 'classnames'
-import { Input, Button } from 'antd'
+import { Input } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 
 interface IProps {
   children?: ReactNode
 }
 const AppHeader: FC<IProps> = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
   function createTab(item: any) {
-    console.log(activeIndex)
     let el: ReactNode
     switch (item.type) {
       case 'path':
-        el = <Link to={item.path}>{item.title}</Link>
+        el = <NavLink to={item.path}>{item.title}</NavLink>
         break
       case 'link':
         el = (
@@ -35,16 +32,9 @@ const AppHeader: FC<IProps> = () => {
         <LeftHeader>
           <a className="logo sprite_01">网易云音乐</a>
           <div className="list">
-            {header_title.map((item, index) => {
+            {header_title.map((item) => {
               return (
-                <div
-                  key={item.title}
-                  className={classNames({
-                    item: true,
-                    active: index === activeIndex
-                  })}
-                  onClick={() => setActiveIndex(index)}
-                >
+                <div key={item.title} className="item">
                   {createTab(item)}
                 </div>
               )
@@ -57,10 +47,11 @@ const AppHeader: FC<IProps> = () => {
             placeholder="音乐/视频/电台/用户"
             prefix={<SearchOutlined />}
           />
-          <Button>创作者中心</Button>
-          <div className="login">登陆</div>
+          <div className="creator">创作者中心</div>
+          <div className="login">登录</div>
         </RightHeader>
       </div>
+      <div className="line"></div>
     </HeaderWrapper>
   )
 }
