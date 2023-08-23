@@ -17,6 +17,26 @@ export const LeftWrapper = styled.div`
   .item img {
     height: 285px;
   }
+  .slick-dots {
+    bottom: 16px;
+    li {
+      width: 14px;
+    }
+    .slick-active {
+      width: 14px !important;
+      button {
+        background-color: #c20c0c !important;
+      }
+    }
+    button {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      &:hover {
+        background-color: #c20c0c !important;
+      }
+    }
+  }
 `
 
 export const RightWrapper = styled.div`
